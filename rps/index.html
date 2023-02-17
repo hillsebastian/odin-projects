@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<title>index.html</title>
+	
+	<style>
+		
+		
+html, body {
+
+
+
+margin:0;
+
+padding:0;
+
+
+
+}
+		
+		body {
+		background: #181716;	
+		}
+		
+		#main {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		justify-content: center;		}
+		.black {
+		color: #F9F6EE;
+		font-family: "Arial Black";	
+		font-weight: 500;
+		font-size: 33vw;
+		}
+
+	</style>
+	
+</head>
+	<body>
+		
+		 <div id="main" class="black">
+			 <strong>index</strong>
+		 </div>
+		<script> 
+			let input = prompt("Pick rock, paper, or scissors", "");
+			function playRound(playerSelection, computerSelection) {
+  			// your code here!
+				
+				playerSelection = playerSelection.toLowerCase()
+				if (playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors'){
+					
+					return 'invalid input';
+				}
+				if (playerSelection == 'rock' && computerSelection == 'rock'){
+					return 'tie'
+				}
+				else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+					return 'player win';
+				}
+				else if (playerSelection == 'rock' && computerSelection == 'paper'){
+					return 'computer win';
+				}
+				else if (playerSelection == 'paper' && computerSelection == 'paper'){
+					return 'tie';
+				}
+				else if (playerSelection == 'paper' && computerSelection == 'scissors'){
+					return 'computer win';
+				}
+				else if (playerSelection == 'paper' && computerSelection == 'rock'){
+					return 'player win';
+				}
+				else if (playerSelection == 'scissors' && computerSelection == 'scissors'){
+					return 'tie';
+				}
+				else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+					return 'player win';
+				}
+				else if (playerSelection == 'scissors' && computerSelection == 'rock'){
+					return 'computer win';
+				}
+				
+			}
+ 			function getComputerChoice(){
+				switch (Math.floor(Math.random() * 2)){
+					case 0:
+						return 'rock';
+						break;
+					case 1:
+						return 'paper';
+						break;
+					case 2:
+						return 'scissors';
+						break;
+					default:
+						return;
+						break;
+						
+				}
+			}
+			const playerSelection = input;
+			const computerSelection = getComputerChoice();
+			alert(playRound(playerSelection, computerSelection));
+		</script>
+
+	</body>
+</html>
